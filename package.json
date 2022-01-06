@@ -1,0 +1,56 @@
+{
+  "name": "mishka",
+  "version": "1.0.0",
+  "description": "Проект «Мишка» от HTML Academy",
+  "main": "index.html",
+  "scripts": {
+    "stylelint": "stylelint src/less/**/*.less --syntax less",
+    "test": "gulp lintspaces && npm run stylelint",
+    "build": "gulp build",
+    "start": "npm run build && gulp serve",
+    "deploy": "npm run build && gh-pages -d build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/andreysgra/mishka.git"
+  },
+  "author": "Andrey Grachev <andreysgra@gmail.com> (https://github.com/andreysgra)",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/andreysgra/mishka/issues"
+  },
+  "homepage": "https://github.com/andreysgra/mishka#readme",
+  "devDependencies": {
+    "autoprefixer": "^8.2.0",
+    "browser-sync": "^2.23.6",
+    "css-mqpacker": "^6.0.2",
+    "del": "^3.0.0",
+    "gh-pages": "^1.1.0",
+    "gulp": "^3.9.1",
+    "gulp-concat": "^2.6.1",
+    "gulp-csso": "^3.0.1",
+    "gulp-imagemin": "^4.1.0",
+    "gulp-less": "^3.5.0",
+    "gulp-lintspaces": "^0.5.0",
+    "gulp-plumber": "^1.2.0",
+    "gulp-postcss": "^7.0.1",
+    "gulp-rename": "^1.2.2",
+    "gulp-svgstore": "^6.1.1",
+    "gulp-uglify": "^3.0.0",
+    "imagemin-jpegoptim": "^5.2.0",
+    "imagemin-webp": "^4.1.0",
+    "run-sequence": "^2.2.1",
+    "stylelint": "^9.2.0",
+    "stylelint-config-standard": "^18.2.0"
+  },
+  "dependencies": {
+    "normalize.css": "^8.0.0",
+    "picturefill": "^3.0.2",
+    "svg4everybody": "^2.1.9"
+  },
+  "browserslist": [
+    "last 2 versions",
+    "not IE < 11",
+    "Firefox ESR"
+  ]
+}
