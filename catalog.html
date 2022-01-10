@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html class="page" lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <!-- <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
+  <title>Mishka</title>
+</head>
+
+<body class="page__body">
+  <header class="page-header">
+    <a class="page-header__logo">
+      <img src="src\img\logo-mobile.svg" height="35px" width="86px" alt="Логотип Мишка">
+    </a>
+
+    <nav class="main-nav">
+      <button class="button main-nav__toggle" type="button"><span class="visually-hidden">Открыть меню</span></button>
+      <div class="main-nav__wrapper">
+        <ul class="main-nav__list site-list">
+          <li class="site-list__item site-list__item--aclive">
+            <a href="#">Каталог товаров</a>
+          </li>
+          <li class="site-list__item">
+            <a href="#">Вязание на заказ</a>
+          </li>
+        </ul>
+
+        <ul class="main-nav_list user-list">
+          <input class="user-list__search" type="text">
+          </li>
+          <li class="user-list__login">
+            <a href="#">Корзина: пока пуста</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+
+  <main class="catalog-main container">
+    <h1 class="visually-hidden">Каталог товаров магазина "Мишка"</h1>
+    <h2 class="catalog-main__title">Каталог товаров</h2>
+    <section class="product-card product-card__wrapper">
+      <h2 class="visually-hidden">Карточки товаров</h2>
+      <ul class="product-card__list">
+        <li class="product-card__item">
+          <a class="product-card__image" href="#">
+            <img src="src\img\content\photo-hare-mobile@1x.jpg" alt="фото зайчика" width="260" height="195">
+            <h2>Зайчик-попрыгайчик</h2>
+            <p>Рост 30 см, вес 200 г</p>
+          </a>
+          <div class="product-card__buy">
+            <p>1 200 руб.</p>
+            <a class="product-card__link" href="#">
+              <!-- <svg class="product-card__svg" width="20px" height="19px" aria-label="Добавить в корзину"><use xlink:href="src\img\icons\icon-cart.svg"></use></svg> -->
+              <svg class="product-card__svg" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg"
+                xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="20.294px" height="18.849px"
+                viewBox="264.205 370.961 20.294 18.849" enable-background="new 264.205 370.961 20.294 18.849"
+                xml:space="preserve" fill="#231F20">
+                <path
+                  d="M283.75,378.19h-3.151l-3.407-6.814c-0.185-0.37-0.634-0.52-1.006-0.335 c-0.371,0.186-0.521,0.636-0.335,1.006l3.071,6.143h-9.138l3.072-6.143c0.185-0.371,0.035-0.821-0.335-1.006 c-0.37-0.185-0.821-0.035-1.006,0.335l-3.407,6.814h-3.151c-0.414,0-0.75,0.336-0.75,0.75s0.336,0.75,0.75,0.75h0.157l0.855,2.991 c-0.187,0.137-0.316,0.347-0.316,0.595c0,0.396,0.309,0.71,0.697,0.739l1.656,5.795h12.697l1.656-5.795 c0.388-0.028,0.698-0.344,0.698-0.739c0-0.249-0.129-0.459-0.316-0.596l0.854-2.991h0.157c0.414,0,0.75-0.336,0.75-0.75 S284.164,378.19,283.75,378.19z M279.569,388.311h-10.433l-1.224-4.284h12.881L279.569,388.311z M281.222,382.526h-13.739 l-0.81-2.836h15.359L281.222,382.526z" />
+              </svg>
+            </a>
+          </div>
+        </li>
+        <li class="product-card__item">
+          <a class="product-card__image" href="#">
+            <img src="src\img\content\photo-bowl-mobile@1x.jpg" alt="фото корзинки для белья" width="260" height="195">
+            <h2>Корзинка для белья</h2>
+            <p>Диаметр 15 см, высота 10 см</p>
+          </a>
+          <div class="product-card__buy">
+            <p>690 руб.</p>
+            <a class="product-card__link" href="#">
+              <!-- <svg class="product-card__svg" width="20px" height="19px" aria-label="Добавить в корзину"><use xlink:href="src\img\icons\icon-cart.svg"></use></svg> -->
+              <svg class="product-card__svg" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg"
+                xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="20.294px" height="18.849px"
+                viewBox="264.205 370.961 20.294 18.849" enable-background="new 264.205 370.961 20.294 18.849"
+                xml:space="preserve" fill="#231F20">
+                <path
+                  d="M283.75,378.19h-3.151l-3.407-6.814c-0.185-0.37-0.634-0.52-1.006-0.335 c-0.371,0.186-0.521,0.636-0.335,1.006l3.071,6.143h-9.138l3.072-6.143c0.185-0.371,0.035-0.821-0.335-1.006 c-0.37-0.185-0.821-0.035-1.006,0.335l-3.407,6.814h-3.151c-0.414,0-0.75,0.336-0.75,0.75s0.336,0.75,0.75,0.75h0.157l0.855,2.991 c-0.187,0.137-0.316,0.347-0.316,0.595c0,0.396,0.309,0.71,0.697,0.739l1.656,5.795h12.697l1.656-5.795 c0.388-0.028,0.698-0.344,0.698-0.739c0-0.249-0.129-0.459-0.316-0.596l0.854-2.991h0.157c0.414,0,0.75-0.336,0.75-0.75 S284.164,378.19,283.75,378.19z M279.569,388.311h-10.433l-1.224-4.284h12.881L279.569,388.311z M281.222,382.526h-13.739 l-0.81-2.836h15.359L281.222,382.526z" />
+              </svg>
+            </a>
+          </div>
+        </li>
+        <li class="product-card__item">
+          <a class="product-card__image" href="#">
+            <img src="src\img\content\photo-toys-mobile@1x.jpg" alt="фото зайчика" width="260" height="195">
+            <h2>Большая корзинка <br> для игрушек</h2>
+            <p>Диаметр 30 см, высота 30 см</p>
+          </a>
+          <div class="product-card__buy">
+            <p>1 500 руб.</p>
+            <a class="product-card__link" href="#">
+              <!-- <svg class="product-card__svg" width="20px" height="19px" aria-label="Добавить в корзину"><use xlink:href="src\img\icons\icon-cart.svg"></use></svg> -->
+              <svg class="product-card__svg" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg"
+                xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="20.294px" height="18.849px"
+                viewBox="264.205 370.961 20.294 18.849" enable-background="new 264.205 370.961 20.294 18.849"
+                xml:space="preserve" fill="#231F20">
+                <path
+                  d="M283.75,378.19h-3.151l-3.407-6.814c-0.185-0.37-0.634-0.52-1.006-0.335 c-0.371,0.186-0.521,0.636-0.335,1.006l3.071,6.143h-9.138l3.072-6.143c0.185-0.371,0.035-0.821-0.335-1.006 c-0.37-0.185-0.821-0.035-1.006,0.335l-3.407,6.814h-3.151c-0.414,0-0.75,0.336-0.75,0.75s0.336,0.75,0.75,0.75h0.157l0.855,2.991 c-0.187,0.137-0.316,0.347-0.316,0.595c0,0.396,0.309,0.71,0.697,0.739l1.656,5.795h12.697l1.656-5.795 c0.388-0.028,0.698-0.344,0.698-0.739c0-0.249-0.129-0.459-0.316-0.596l0.854-2.991h0.157c0.414,0,0.75-0.336,0.75-0.75 S284.164,378.19,283.75,378.19z M279.569,388.311h-10.433l-1.224-4.284h12.881L279.569,388.311z M281.222,382.526h-13.739 l-0.81-2.836h15.359L281.222,382.526z" />
+              </svg>
+            </a>
+          </div>
+        </li>
+      </ul>
+    </section>
+
+    <article class="production-video production-video__wrapper">
+      <h2 class="visualli-hidden">Видео процесса производства игрушек</h2>
+
+      <div class="production-video__title">
+        <h3>Процесс производства</h3>
+      </div>
+
+      <div class="production-video__picture">
+        <img class="production-video__image" src="src\img\video-mobile@1x.jpg" width="260px" height="150px"
+          alt="Видео процесса производства игрушек">
+        <img class="production-video__play-button" src="src\img\icon-play.svg" alt="кнопка пуска видео">
+      </div>
+
+      <div class="production-video__description">
+        <p>По просьбам наших любимых фолловеров мы сняли для вас подробное видео о том, как появляются наши товары.</p>
+      </div>
+
+      <button class="button production-video__order-button">Заказать</button>
+    </article>
+  </main>
+
+  <footer class="main-footer">
+    <div class="main-footer__container">
+      <div class="main-footer__socials">
+        <ul class="socials__list">
+          <li class="socials__item">
+            <a class="socials__item socials__item--instagram" href="#" >
+              <img src="src\img\icons\icon-insta.svg" alt="instagram">
+            </a>
+          </li>
+          <li class="socials__item">
+            <a class="socials__item socials__item--facebook" href="#" >
+            <img src="src\img\icons\icon-fb.svg" alt="facebook"></a>
+          </li>
+          <li class="socials__item">
+            <a class="socials__item socials__item--twitter" href="#" >
+              <img src="src\img\icons\icon-twitter.svg" alt="twitter">
+            </a>
+
+          </li>
+        </ul>
+
+      </div>
+      <div class="main-footer__developers">
+        <div class="developers_title">Разработано</div>
+      </div>
+      <!-- <div class="main-footer__logo">
+        <img class="logo-mobile" ></img>
+      </div> -->
+
+    </div>
+  </footer>
+
+</body>
+
+</html>
