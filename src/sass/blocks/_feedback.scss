@@ -1,0 +1,54 @@
+.feedback__wraper {
+  margin-bottom: 30px;
+}
+
+.feedback__list {
+  padding: 0;
+  margin: 0;
+}
+
+.feedback__text {
+  @include p;
+
+  line-height: 30px;
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+
+.feedback__author {
+  font-style: normal;
+  font-weight: 700;
+  font-size: 17px;
+  line-height: 24px;
+  color: $black;
+}
+
+.feedback__mail {
+  font-style: normal;
+  font-weight: 700;
+  font-size: 17px;
+  color: $brown_border;
+}
+
+.feedback__button__wrapper {
+display: flex;
+}
+
+.feedback__button-slider {
+  background-color: $white;
+  height: 52px;
+  width: 50%;
+  border: none;
+  &:hover {
+    background-color: $white;
+    opacity: 0.6;
+  }
+  &:active {
+    background-color: $white;
+    opacity: 0.3;
+  }
+}
+
+.feedback__button {
+  width: 100%;
+}

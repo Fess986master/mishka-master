@@ -1,0 +1,15 @@
+.socials_wrapper {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 200px;
+}
+
+.socials__list {
+  @include ul-clear;
+}
+
+.socials__item {
+  margin-left: 10px;
+  margin-right: 10px;
+  margin-bottom: 14px;
+}

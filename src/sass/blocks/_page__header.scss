@@ -1,0 +1,30 @@
+.page-header {
+  background-color: $white;
+}
+
+.page-header__wraper {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  margin-bottom: 20px;
+}
+
+.page-header__logo {
+  &:hover {
+    opacity: 0.6;
+  }
+
+  &:active {
+    opacity: 0.3;
+  }
+}
+
+.page-header__button {
+  background-repeat: no-repeat;
+  width: 21px;
+  height: 20px;
+  border: none;
+  background-color: $white;
+  margin-left: 65px;
+  background-image: (url("../img/icon-menu-open.svg"));
+}
