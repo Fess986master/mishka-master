@@ -1,0 +1,111 @@
+html {
+  box-sizing: border-box;
+}
+
+.page__body {
+  //width: 320px;
+  //position: relative;
+  min-width: 320px;
+  width: 320px;
+  min-height: 100%;
+  font-family:
+    "Open Sans",
+    "Arial",
+    sans-serif;
+  font-size: 17px;
+  line-height: 24px;
+  font-weight: normal;
+  color: #000000;
+}
+
+.page-main {
+  display: block;
+}
+
+* {
+  box-sizing: inherit;
+}
+
+// *,
+// *::before,
+// *::after {
+//   box-sizing: inherit;
+// }
+
+.container {
+  margin: 0 auto;
+  padding: 0 30px;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  white-space: nowrap;
+
+  /* убирает пробелы, не дает переносить текст на другие строки */
+  clip-path: inset(100%);
+
+  /* определяет область отображения текста по шаблону. совместимость средняя */
+  clip: rect(0 0 0 0);
+
+  /* определяет область отображения текста по прямоугольнику. совместимость высокая */
+  overflow: hidden;
+
+  /* определяет что делать с элементами, которые не вмещаются в блок: показать/скрыть/скролл. можно применять к блокам, флексам и гридам */
+}
+
+h2 {
+  @include h2;
+}
+
+h3 {
+  @include h3;
+}
+
+h4 {
+  @include h4;
+}
+
+h5 {
+  @include h5;
+}
+
+p {
+  @include p;
+}
+
+a {
+  @include ul-clear;
+  color: inherit;
+}
+
+.button {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  padding-top: 14px;
+  padding-bottom: 14px;
+  min-height: 52px;
+  border: 2px solid $brown_border;
+  color: $brown_border;
+  text-transform: uppercase;
+  background-color: $white;
+  cursor: pointer;
+
+  &:hover {
+    color: $white;
+    background-color: $brown_border;
+  }
+  &:active {
+    color: rgba(255,255,255,.3);
+    background-color: $brown_border;
+
+  }
+}

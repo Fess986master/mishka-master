@@ -1,0 +1,40 @@
+.contacts__title--margin {
+  margin-bottom: 15px;
+}
+
+.contacts__wrapper {
+  margin-bottom: 20px;
+}
+
+.contacts__table {
+  font-size: 14px;
+  line-height: 30px;
+  color: $brown_border;
+  font-weight: normal;
+}
+
+.contacts__table--title {
+width: 76px;
+}
+
+.contacts__table--propertyes {
+  color:&border-bottom;
+  border-bottom: 1px #62D1BA solid;
+
+  &:hover {
+    color: $mail_link_tiffany;
+  }
+
+  &:active {
+    color: $mail_link_tiffany;
+    border-bottom: none;
+  }
+}
+
+.contacts__table--adress {
+  vertical-align: top;
+}
+
+.contacts__button {
+  width: 100%;
+}

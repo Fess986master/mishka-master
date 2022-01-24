@@ -1,196 +1,146 @@
-'use strict';
+// основа скриптов с сайта: https://webdesign-master.ru/blog/tools/gulp-4-lesson.html
 
-const gulp = require('gulp');
-const plumber = require('gulp-plumber');
-const imagemin = require('gulp-imagemin');
-const rename = require('gulp-rename');
-const del = require('del');
-const concat = require('gulp-concat');
-const run = require('run-sequence');
+// Определяем переменную "preprocessor"
+let preprocessor = 'sass'; // Выбор препроцессора в проекте - sass или less
+
+let gulp = require('gulp');
+const
+    {
+  src,
+  dest,
+  parallel,
+  series,
+  watch
+} = require('gulp');
+
+
+// Подключаем Browsersync. Здесь необходимо указать .create() для создания нового подключения.
 const browserSync = require('browser-sync').create();
 
-let rootDirs = {
-  src: 'src/',
-  build: 'build/'
+// Подключаем gulp-concat
+const concat = require('gulp-concat');
+
+// Подключаем gulp-uglify-es
+const uglify = require('gulp-uglify-es').default;
+
+// Подключаем модули gulp-sass и gulp-less
+const sass = require('gulp-sass')(require('sass'));
+const less = require('gulp-less');
+
+// Подключаем Autoprefixer
+const autoprefixer = require('gulp-autoprefixer');
+
+// Подключаем модуль gulp-clean-css
+const cleancss = require('gulp-clean-css');
+
+// Подключаем модуль del
+const del = require('del');
+
+// подключаем модуль карт кода
+const map = require('gulp-sourcemaps');
+
+// оптимизация изображений
+
+// Определяем логику работы Browsersync. Только строчные буквы чтобы не совпадало с константой
+function browsersync() {
+  browserSync.init({ // Инициализация Browsersync
+    server: {
+      baseDir: 'src/'
+    }, // Указываем папку сервера
+    notify: false, // Отключаем уведомления
+    online: true // Режим работы: true или false (фолс если хотим работать в офлайне)
+  })
 }
 
-let projectDirs = {
-  src: {
-    root: rootDirs.src,
-    style: rootDirs.src + 'less/',
-    js: rootDirs.src + 'js/',
-    img: rootDirs.src + 'img/',
-    webp: rootDirs.src + 'img/content/',
-    fonts: rootDirs.src + 'fonts/'
-  },
-  build: {
-    root: rootDirs.build ,
-    css: rootDirs.build + 'css/',
-    js: rootDirs.build + 'js/',
-    img: rootDirs.build + 'img/',
-    webp: rootDirs.build + 'img/content/',
-    icons: rootDirs.build + 'img/icons/'
-  }
-};
-
-// Удаление каталога сборки
-gulp.task('clean:build', function () {
-  return del(projectDirs.build.root);
-});
-
-// Удаление каталога иконок для SVG спрайта
-gulp.task('clean:icons', function () {
-  return del(projectDirs.build.img + 'icons');
-});
-
-// Копирование файлов
-gulp.task('copy:build', function () {
-  console.log('Копирование файлов...');
-
-  return gulp.src([
-      projectDirs.src.fonts + '**/*.{woff,woff2}',
-      projectDirs.src.root + '*.html'
-    ], {
-      base: projectDirs.src.root
-    })
-    .pipe(gulp.dest(projectDirs.build.root));
-});
-
-gulp.task('copy:html', function () {
-  return gulp.src(projectDirs.src.root + '*.html')
-    .pipe(gulp.dest(projectDirs.build.root))
-    .pipe(browserSync.stream());
-});
-
-// Линтинг в соответствии с настройками .editorconfig
-gulp.task('lintspaces', function () {
-  const lintspaces = require('gulp-lintspaces');
-
-  return gulp.src([
-      projectDirs.src.root + '*.html',
-      '*.json',
-      '*.js',
-      '*.md',
-      projectDirs.src.root + '**/*.js',
-      projectDirs.src.img + '**/*.svg',
-      projectDirs.src.style + '**/*.less'
-    ])
-    .pipe(lintspaces({editorconfig: '.editorconfig'}))
-    .pipe(lintspaces.reporter());
-});
-
-// Компиляция стилей проекта
-gulp.task('style', function () {
-  const less = require('gulp-less');
-  const postcss = require('gulp-postcss');
-  const autoprefixer = require('autoprefixer');
-  const mqpacker = require('css-mqpacker');
-  const csso = require('gulp-csso');
-
-  let plugins = [
-    autoprefixer(),
-    mqpacker({sort: true})
-  ];
-
-  console.log('Компиляция стилей...');
-
-  return gulp.src(projectDirs.src.style + 'style.less')
-    .pipe(plumber())
-    .pipe(less())
-    .pipe(postcss(plugins))
-    .pipe(gulp.dest(projectDirs.build.css))
-    .pipe(csso({comments: false}))
-    .pipe(rename({suffix: '.min'}))
-    .pipe(gulp.dest(projectDirs.build.css))
-    .pipe(browserSync.stream());
-});
-
-// Минификация JS скриптов
-
-gulp.task('js', function () {
-  const uglify = require('gulp-uglify');
-
-  console.log('Минификация JS...');
-
-  return gulp.src([
-      'node_modules/picturefill/dist/picturefill.js',
-      'node_modules/svg4everybody/dist/svg4everybody.js',
-      projectDirs.src.js + '**/*.js'
-    ])
-    .pipe(concat('index.js'))
-    .pipe(gulp.dest(projectDirs.build.js))
-    .pipe(uglify())
-    .pipe(rename({suffix: '.min'}))
-    .pipe(gulp.dest(projectDirs.build.js))
-    .pipe(browserSync.stream());
-});
-
 // Оптимизация изображений
-gulp.task('images', function () {
-  const jpegoptim = require('imagemin-jpegoptim');
+// function images () {
 
-  console.log('Оптимизация изображений...');
+//   console.log('Оптимизация изображений...');
 
-  return gulp.src(projectDirs.src.img + '**/*.{jpg,png,svg}')
-    .pipe(imagemin([
-      imagemin.optipng(),
-      imagemin.svgo({
-        plugins: [
-          {removeViewBox: false},
-          {removeTitle: true},
-          {cleanupNumericValues:
-            {floatPrecision: 0}
-          }
-        ]
-      }),
-      jpegoptim({
-        max: 80,
-        progressive: true
-      })
-    ]))
-    .pipe(gulp.dest(projectDirs.build.img));
-});
+//   return src('src/imgtest')  // + '**/*.{jpg,png,svg}
+//     .pipe(imagemin([
+//      // imagemin.optipng(),
+//       imagemin.svgo({
+//         plugins: [
+//           {removeViewBox: false},
+//           {removeTitle: true},
+//           {cleanupNumericValues:
+//             {floatPrecision: 0}
+//           }
+//         ]
+//       }),
+//       jpegoptim({
+//         max: 80,
+//         progressive: true
+//       })
+//     ]))
+//     .pipe(dest('src/imgdest/'));
+// }
 
-// Конвертация контентных изображений в формат WebP
-gulp.task('webp', function () {
-  const webp = require('imagemin-webp');
+function scripts() {
+  return src([ // Берем файлы из источников
+      //'node_modules/jquery/dist/jquery.min.js', // Пример подключения библиотеки
+      'src/js/app.js', // Пользовательские скрипты, использующие библиотеку, должны быть подключены в конце
+    ])
+    .pipe(concat('app.min.js')) // Конкатенируем(сливаем) в один файл
+    .pipe(uglify()) // Сжимаем(уродуем) JavaScript
+    .pipe(dest('src/js/')) // Выгружаем готовый файл в папку назначения
+    .pipe(browserSync.stream()) // Триггерим Browsersync для обновления страницы
+}
 
-  console.log('Конвертирование изображений в формат WebP...');
+function startwatch() {
+  // Выбираем все файлы JS в проекте, а затем исключим с суффиксом .min.js
+  watch(['src/**/*.js', '!src/**/*.min.js'], scripts);
+  // Мониторим файлы препроцессора на изменения
+  watch('src/**/' + preprocessor + '/**/*.scss', styles);
+  // Мониторим файлы HTML на изменения
+  watch('src/**/*.html').on('change', browserSync.reload);
+}
 
-  return gulp.src(projectDirs.src.webp + '**/*.jpg')
-    .pipe(imagemin([
-      webp({quality: 80})
-    ]))
-    .pipe(rename({extname: '.webp'}))
-    .pipe(gulp.dest(projectDirs.build.webp));
-});
+function styles() {
+  return src('src/sass/main.scss') // Выбираем источник: "app/sass/main.sass" или "app/less/main.less"
+  .pipe(map.init())  //запускаем карту кода
+  .pipe(eval(preprocessor)()) // Преобразуем значение переменной "preprocessor" в функцию
+    .pipe(concat('style.css')) // Конкатенируем в файл style.css
+    .pipe(autoprefixer({
+      overrideBrowserslist: ['last 10 versions'],
+      grid: true
+    })) // Создадим префиксы с помощью Autoprefixer. Префиксы нужны для совместимости браузеров. грид - нужен для того чтобы эксплорер понимал гриды
+    //.pipe(cleancss( { level: { 2: { specialComments: 0 } }/* , format: 'beautify' */ } )) // Минифицируем стили. в одну строку. если расскоментить бьютифай, то наоборот будет максимально красиво
+    .pipe(cleancss({
+      level: {
+        1: {
+          specialComments: 0
+        }
+      },
+      format: 'beautify'
+    })) //делаем всё красиво!! Если надо сжато, то расскоментим предыдущую строку
+    .pipe(map.write('../css/'))  //записываем карту кода в папку css
+    .pipe(dest('src/css/')) // Выгрузим результат в папку "app/css/"
+    .pipe(browserSync.stream()) // Сделаем инъекцию в браузер
+}
 
-// Сборка SVG спрайта
-gulp.task('sprite', function () {
-  const svgstore = require('gulp-svgstore');
+function cleanimg() {
+  return del('src/imgtest/**/**', {
+    force: true
+  }) // Удаляем все содержимое папки "app/images/dest/"
+}
 
-  console.log('Сборка SVG спрайта...');
+// Экспортируем функцию styles() в таск styles
+exports.styles = styles;
 
-  return gulp.src(projectDirs.build.icons + '*.svg')
-    .pipe(svgstore({inlineSvg: true}))
-    .pipe(rename('symbols.svg'))
-    .pipe(gulp.dest(projectDirs.build.img));
-});
+// Экспортируем функцию browsersync() как таск browsersync. Значение после знака = это имеющаяся функция.
+exports.browsersync = browsersync;
 
-// Локальный сервер
-gulp.task('serve', function () {
-  browserSync.init({
-    server: projectDirs.build.root,
-    cors: true,
-    notify: false
-  });
+// Экспортируем функцию scripts() в таск scripts
+exports.scripts = scripts;
 
-  gulp.watch(projectDirs.src.style + '**/*.less', ['style']);
-  gulp.watch(projectDirs.src.root + '*.html', ['copy:html']);
-  gulp.watch(projectDirs.src.js + '*.js', ['js']);
-});
+// Экспортируем дефолтный таск с нужным набором функций. Вызывается тупо коммандой gulp из консоли
+exports.default = parallel(styles, scripts, browsersync, startwatch); //параллельно запустятся скрипты, сервер и слежка
 
-// Сборка проекта
-gulp.task('build', function (callback) {
-  run('clean:build', 'copy:build', 'style', 'js', 'images', 'webp', 'sprite', 'clean:icons', callback);
+// Экспортируем функцию cleanimg() как таск cleanimg
+exports.cleanimg = cleanimg;
+
+gulp.task('mytask', function () {
+  console.log('Привет, я таск!');
 });
