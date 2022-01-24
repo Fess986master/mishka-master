@@ -1,56 +1,49 @@
 {
-  "name": "mishka",
+  "name": "mishka-student",
   "version": "1.0.0",
-  "description": "Проект «Мишка» от HTML Academy",
-  "main": "index.html",
+  "description": "[![Build status][travis-image]][travis-url] [![Dependency status][dependency-image]][dependency-url]",
+  "main": "gulpfile.js",
   "scripts": {
-    "stylelint": "stylelint src/less/**/*.less --syntax less",
-    "test": "gulp lintspaces && npm run stylelint",
-    "build": "gulp build",
-    "start": "npm run build && gulp serve",
-    "deploy": "npm run build && gh-pages -d build"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "styles": "gulp styles"
   },
   "repository": {
     "type": "git",
-    "url": "git+ssh://git@github.com/andreysgra/mishka.git"
+    "url": "git+https://github.com/fess986/mishka-student.git"
   },
-  "author": "Andrey Grachev <andreysgra@gmail.com> (https://github.com/andreysgra)",
+  "author": "fess986",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/andreysgra/mishka/issues"
+    "url": "https://github.com/fess986/mishka-student/issues"
   },
-  "homepage": "https://github.com/andreysgra/mishka#readme",
+  "homepage": "https://github.com/fess986/mishka-student#readme",
   "devDependencies": {
-    "autoprefixer": "^8.2.0",
-    "browser-sync": "^2.23.6",
-    "css-mqpacker": "^6.0.2",
-    "del": "^3.0.0",
-    "gh-pages": "^1.1.0",
-    "gulp": "^3.9.1",
+    "browser-sync": "^2.27.7",
+    "del": "^6.0.0",
+    "gifsicle": "^6.1.0",
+    "gulp": "^4.0.2",
+    "gulp-autoprefixer": "^8.0.0",
+    "gulp-cache": "^1.1.3",
+    "gulp-clean-css": "^4.3.0",
     "gulp-concat": "^2.6.1",
-    "gulp-csso": "^3.0.1",
-    "gulp-imagemin": "^4.1.0",
-    "gulp-less": "^3.5.0",
-    "gulp-lintspaces": "^0.5.0",
-    "gulp-plumber": "^1.2.0",
-    "gulp-postcss": "^7.0.1",
-    "gulp-rename": "^1.2.2",
-    "gulp-svgstore": "^6.1.1",
-    "gulp-uglify": "^3.0.0",
-    "imagemin-jpegoptim": "^5.2.0",
-    "imagemin-webp": "^4.1.0",
-    "run-sequence": "^2.2.1",
-    "stylelint": "^9.2.0",
-    "stylelint-config-standard": "^18.2.0"
-  },
-  "dependencies": {
-    "normalize.css": "^8.0.0",
-    "picturefill": "^3.0.2",
-    "svg4everybody": "^2.1.9"
-  },
-  "browserslist": [
-    "last 2 versions",
-    "not IE < 11",
-    "Firefox ESR"
-  ]
+    "gulp-imagemin": "^8.0.0",
+    "gulp-less": "^5.0.0",
+    "gulp-sass": "^5.1.0",
+    "gulp-sourcemaps": "^3.0.0",
+    "gulp-uglify-es": "^3.0.0",
+    "imagemin-giflossy": "^5.1.10",
+    "imagemin-jpegoptim": "^8.0.0",
+    "imagemin-pngquant": "^9.0.2",
+    "imagemin-webp": "^7.0.0",
+    "imagemin-zopfli": "^7.0.0",
+    "jquery": "^3.6.0",
+    "pngquant-bin": "^7.0.2",
+    "sass": "^1.48.0",
+    "stylelint": "^14.2.0",
+    "stylelint-config-recommended-scss": "^5.0.2",
+    "stylelint-config-standard": "^24.0.0",
+    "stylelint-declaration-block-no-ignored-properties": "^2.5.0",
+    "stylelint-order": "^5.0.0",
+    "stylelint-scss": "^4.1.0"
+  }
 }
