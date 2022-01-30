@@ -5,7 +5,7 @@ html {
 .page__body {
   //width: 320px;
   //position: relative;
-  min-width: 320px;
+  min-width: 320px; //не даем сжать страницу меньше 320, чтобы не появилась прокрутка
   width: 320px;
   min-height: 100%;
   font-family:
@@ -16,6 +16,18 @@ html {
   line-height: 24px;
   font-weight: normal;
   color: #000000;
+  //background-color: red;
+
+  //@media (min-width : $tablet-width) and (max-width : $desktop-width) {
+  @media (min-width: $tablet-width) {
+    width: 768px; //либо авто, если макет резиновый
+    //background-color: green;
+  }
+
+  @media (min-width: $desktop-width) {
+    width: 1250px;
+    //background-color: blue;
+  }
 }
 
 .page-main {
@@ -35,6 +47,13 @@ html {
 .container {
   margin: 0 auto;
   padding: 0 30px;
+
+  @media (min-width: $tablet-width) {
+    margin: 0 auto;
+    padding: 0 50px;
+    outline: 2px red solid;
+    outline-offset: -52px;
+  }
 }
 
 .visually-hidden {
@@ -80,12 +99,13 @@ p {
 
 a {
   @include ul-clear;
+
   color: inherit;
 }
 
 .button {
-  display: -webkit-box;
-  display: -ms-flexbox;
+  display: box;
+  display: flexbox;
   display: flex;
   -webkit-box-pack: center;
   -ms-flex-pack: center;
@@ -103,9 +123,9 @@ a {
     color: $white;
     background-color: $brown_border;
   }
-  &:active {
-    color: rgba(255,255,255,.3);
-    background-color: $brown_border;
 
+  &:active {
+    color: rgb(255 255 255 / 30%);
+    background-color: $brown_border;
   }
 }

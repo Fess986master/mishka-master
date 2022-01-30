@@ -12,7 +12,7 @@
 
   line-height: 30px;
   margin-top: 15px;
-  margin-bottom: 14px;
+  margin-bottom: 15px;
 }
 
 .feedback__author {
@@ -31,7 +31,7 @@
 }
 
 .feedback__button__wrapper {
-display: flex;
+  display: flex;
 }
 
 .feedback__button-slider {
@@ -39,10 +39,12 @@ display: flex;
   height: 52px;
   width: 50%;
   border: none;
+
   &:hover {
     background-color: $white;
     opacity: 0.6;
   }
+
   &:active {
     background-color: $white;
     opacity: 0.3;
@@ -51,4 +53,35 @@ display: flex;
 
 .feedback__button {
   width: 100%;
+}
+
+@media (min-width: $tablet-width) {
+  .feedback__wraper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+  .feedback__title {
+    order:-2;
+    margin-bottom: 30px;
+  }
+
+
+  .feedback__button {
+    order:-1;
+    width: 175px;
+    height: 52px;
+  }
+
+  .feedback__list {
+    margin-bottom: 30px;
+
+  }
+}
+
+@media (min-width: $desktop-width) {
+  .feedback__wraper {
+    margin-left: 175px;
+  }
 }

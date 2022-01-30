@@ -19,9 +19,11 @@
 
 .order-form__type {
   border: none;
+  position: relative;
 }
 
 .order-form__color {
+  position: relative;
   border: none;
 }
 
@@ -29,6 +31,7 @@
   margin: 0;
   padding: 0;
   border: none;
+  position: relative;
 }
 
 .order-form__telephone {
@@ -50,6 +53,14 @@
     background-repeat: no-repeat;
     background-position: 0 0;
     opacity: 0.2;
+
+    @media (min-width: $tablet-width) {
+      left: 627px;
+    }
+
+    @media (min-width: $tablet-width) {
+      left: 1115px;
+    }
   }
 
   &:hover {
@@ -78,6 +89,14 @@
     background-repeat: no-repeat;
     background-position: 0 0;
     opacity: 0.2;
+
+    @media (min-width: $tablet-width) {
+      left: 620px;
+    }
+
+    @media (min-width: $tablet-width) {
+      left: 1110px;
+    }
   }
 
   &:hover {
@@ -94,12 +113,13 @@
 }
 
 .order-form__additional {
+  position: relative;
   margin: 0;
   padding: 0;
   border: none;
 }
 
-.order-form--position {
+.type__wrapper {
   margin: 0;
   padding: 0;
 }
@@ -121,6 +141,10 @@
     width: calc(320px - 60px - 62px);
     left: 62px;
     top: 6px;
+
+    @media (min-width: $tablet-width) {
+      display: none;
+    }
   }
 }
 
@@ -147,6 +171,12 @@
   width: 200px;
   padding-bottom: 14px;
 
+  @media (min-width: $tablet-width) {
+    width: 400px;
+    padding-left: 80px;
+    padding-top: 24px;
+  }
+
   &::before {
     position: absolute;
     content: "";
@@ -158,6 +188,12 @@
     left: 0;
     top: 16px;
     cursor: pointer;
+
+    @media (min-width: $tablet-width) {
+      height: 52px;
+      width: 52px;
+      top: 9px;
+    }
   }
 
   &:hover {
@@ -185,6 +221,13 @@
   left: 14px;
   top: 30px;
   cursor: pointer;
+
+  @media (min-width: $tablet-width) {
+    height: 22px;
+    width: 22px;
+    left: 18px;
+    top: 26px;
+  }
 }
 
 .color__label {
@@ -197,6 +240,10 @@
   padding-top: 16px;
   width: 200px;
   padding-bottom: 14px;
+
+  @media (min-width: $desktop-width) {
+    width: 300px;
+  }
 
   &::before {
     position: absolute;
@@ -299,7 +346,20 @@
   border: 2px $black solid;
   margin-bottom: 10px;
 
-  &:hover, &:active {
+  @media (min-width: $tablet-width) {
+    display: flex;
+    flex-flow: column;
+    margin-left: 167px;
+    width: $tablet-width - 267px;
+  }
+
+  @media (min-width: $desktop-width) {
+    margin-left: 174px;
+    width: $desktop-width - 174px;
+  }
+
+  &:hover,
+  &:active {
     border: 2px #62d1ba solid;
   }
 }
@@ -313,4 +373,149 @@
 
 .order-form__submit {
   width: 100%;
+}
+
+@media (min-width: $tablet-width) {
+  .order-section__text {
+    font-size: 17px;
+    line-height: 30px;
+  }
+
+  .order-form__legend {
+    display: box;
+    width: 100px;
+  }
+
+  .order-form__legend--position {
+    position: absolute;
+    top: 27px;
+    left: 0;
+    margin: 0;
+  }
+
+  .type__list__wrapper {
+    display: flex;
+    flex-flow: column;
+    margin-left: 167px;
+  }
+
+  .type__wrapper {
+    margin-bottom: 60px;
+  }
+
+  .color--wrapper {
+    margin-bottom: 60px;
+  }
+
+  .fks__wrapper {
+    margin-bottom: 60px;
+  }
+
+  .e-mail__wrapper {
+    margin-bottom: 60px;
+  }
+
+  .additional__wrapper {
+    margin-bottom: 40px;
+  }
+
+  .color__list__wrapper {
+    display: flex;
+    flex-flow: row;
+    flex-wrap: wrap;
+    margin-left: 167px;
+  }
+
+  .fks__list__wrapper {
+    display: flex;
+    flex-flow: column;
+    margin-left: 167px;
+  }
+
+  .telephone__input {
+    display: flex;
+    flex-flow: column;
+    margin-left: 167px;
+  }
+
+  .e-mail__input {
+    display: flex;
+    flex-flow: column;
+    margin-left: 167px;
+  }
+
+  .type__item {
+    margin-bottom: 20px;
+  }
+
+  .fks__item {
+    display: flex;
+  }
+
+  .fks__label {
+    align-self: center;
+    padding-right: 27px;
+  }
+
+  .telephone__input {
+    width: $tablet-width - 267px;
+  }
+
+  .e-mail__input {
+    width: $tablet-width - 267px;
+  }
+
+  .order-form__submit {
+    width: 230px;
+  }
+
+  .submit__wrapper {
+    display: flex;
+    flex-flow: row-reverse;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-bottom: 70px;
+  }
+
+  .order-form__notes {
+    align-self: center;
+  }
+}
+
+@media (min-width: $desktop-width) {
+  .order-section__text {
+    margin-left: 174px;
+  }
+
+  .type__list__wrapper {
+    margin-left: 174px;
+  }
+
+  .color__list__wrapper {
+    margin-left: 174px;
+  }
+
+  .fks__list__wrapper {
+    margin-left: 174px;
+  }
+
+  .telephone__input {
+    margin-left: 174px;
+  }
+
+  .e-mail__input {
+    margin-left: 174px;
+  }
+
+  .order-form__legend--position {
+    left: 62px;
+  }
+
+  .telephone__input {
+    width: 975px;
+  }
+
+  .e-mail__input {
+    width: 975px;
+  }
 }

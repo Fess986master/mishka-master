@@ -14,32 +14,50 @@
 </head>
 
 <body class="page__body container">
-  <header class="page-header">
-    <div class="page-header__wraper">
-      <a class="page-header__logo" href="index.html">
-        <img src="img\logo-mobile.svg" alt="Логотип Мишка">
-      </a>
-      <button class="page-header__button" type="button" aria-label="открыть меню"></button>
-    </div>
+  <header class="page-header page-header-wrapper">
+    <nav class="page-navigation-wrapper">
+      <div class="page-header__logo-wrapper">
+        <a class="page-header__logo" href="index.html">
+          <img src="img\logo-mobile.svg" alt="Логотип Мишка">
+        </a>
+        <button class="page-header__button" type="button" aria-label="открыть меню"></button>
+      </div>
 
-    <nav class="main-nav">
       <ul class="main-nav__list site-list main-nav__wrapper">
-        <li class="site-list__item">
-          <a class="site-list__reference site-list__item--first" href="catalog.html">Каталог товаров</a>
+        <li class="site-list__item site-list__item--catalog">
+          <a class="site-list__reference site-list__reference--catalog" href="catalog.html">Каталог товаров</a>
         </li>
         <li class="site-list__item">
-          <a class="site-list__reference" href="form.html">Вязание на заказ</a>
+          <a class="site-list__reference site-list__reference--order" href="form.html">Вязание на заказ</a>
         </li>
       </ul>
 
       <ul class="main-nav__list user-list main-nav__wrapper">
         <li class="site-list__item site-list__search">
-          <a class="site-list__reference" href="#">Поиск по сайту:</a>
+          <a class="site-list__reference site-list__reference--search" href="#">
+            <span class="span-hidden">
+              Поиск по сайту:
+            </span>
+          </a>
         </li>
-        <li class="site-list__item user-list__login">
-          <a class="site-list__reference" href="#">Корзина: пока пуста</a>
+        <li class="site-list__item user-list__cart">
+          <a class="site-list__reference site-list__reference--cart" href="#">Корзина: пока пуста</a>
         </li>
       </ul>
+
+      <ul class="main-nav__list bonus-list main-nav__wrapper">
+        <li class="site-list__item">
+          <a class="site-list__reference site-list__reference--incomings" href="catalog.html">Новые поступления</a>
+        </li>
+        <li class="site-list__item">
+          <a class="site-list__reference site-list__reference--sale" href="form.html">Распродажа</a>
+        </li>
+      </ul>
+
+      <p class="site-list__description">
+        Бесплатная доставка по россии
+      </p>
+
     </nav>
   </header>
 
@@ -51,9 +69,9 @@
         свяжемся с вами, чтобы
         уточнить детали.</p>
       <form class="order-form" method="post" action="https://echo.htmlacademy.ru/">
-        <fieldset class="order-form__type order-form--position">
+        <fieldset class="order-form__type type__wrapper">
           <legend class="order-form__legend order-form__legend--position">тип</legend>
-          <ul class="type__list">
+          <ul class="type__list type__list__wrapper">
             <li class="type__item">
               <input class="type__input visually-hidden type__input--active" type="radio" id="accessories"
                 value="accessories" name="type" checked>
@@ -66,9 +84,9 @@
           </ul>
         </fieldset>
 
-        <fieldset class="order-form__color order-form--position">
+        <fieldset class="order-form__color color--wrapper">
           <legend class="order-form__legend order-form__legend--position">цвет</legend>
-          <ul class="type__list">
+          <ul class="type__list color__list__wrapper">
             <li class="type__item">
               <input class="color__input visually-hidden color__input--active" type="checkbox" id="white" value="white"
                 name="color" checked>
@@ -98,9 +116,9 @@
           </ul>
         </fieldset>
 
-        <fieldset class="order-form__fks">
+        <fieldset class="order-form__fks fks__wrapper">
           <legend class="order-form__legend order-form__legend--position">ФИО</legend>
-          <ul class="fks__list">
+          <ul class="fks__list fks__list__wrapper">
             <li class="fks__item">
               <label class="fks__label" for="name">Имя:</label>
               <input class="fks__input" type="text" id="name" name="fks" placeholder="Введите ваше имя*">
@@ -116,33 +134,39 @@
           </ul>
         </fieldset>
 
-        <fieldset class="order-form__telephone">
+        <fieldset class="order-form__telephone telephone__wrapper">
           <legend class="order-form__legend  order-form__legend--position">Тел</legend>
           <input class="telephone__input" type="tel" name="telephone" placeholder="+7 XXX XXX XX XX*">
         </fieldset>
 
-        <fieldset class="order-form__e-mail">
+        <fieldset class="order-form__e-mail e-mail__wrapper">
           <legend class="order-form__legend  order-form__legend--position">e-mail</legend>
           <input class="e-mail__input" type="e-mail" name="e-mail" placeholder="Ваш Email">
         </fieldset>
 
-        <fieldset class="order-form__additional">
+        <fieldset class="order-form__additional additional__wrapper ">
           <legend class="order-form__legend  order-form__legend--position">доп</legend>
           <!-- <input class="additional__input" type="e-mail" name="additional"
             placeholder="Опишите все ваши пожелания к заказу"> -->
 
-          <textarea class="additional__input" name="additional-info" id="additional" cols="6" rows="10" placeholder="Опишите все ваши пожелания к заказу"></textarea>
+          <textarea class="additional__input" name="additional-info" id="additional" cols="6" rows="10"
+            placeholder="Опишите все ваши пожелания к заказу"></textarea>
         </fieldset>
 
-        <p class="order-form__notes">*Поля обязательны для заполнения</p>
+        <div class="submit__wrapper">
+          <p class="order-form__notes">*Поля обязательны для заполнения</p>
+          <button class="button order-form__submit" type="submit">отправить заказ </button>
+        </div>
 
-        <button class="button order-form__submit" type="submit">отправить заказ </button>
       </form>
     </section>
 
   </main>
 
   <footer class="main-footer main-footer__container">
+    <a class="page-footer__logo" href="index.html">
+      <img src="img\icons\logo-footer.svg" alt="Логотип Мишка">
+    </a>
     <ul class="socials__list socials_wrapper">
       <li class="socials__item">
         <a class="socials__item socials__item--instagram" href="#">

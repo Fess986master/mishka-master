@@ -1,3 +1,23 @@
 .main-footer {
   background-color: $white;
 }
+
+.page-footer__logo {
+  display: none;
+  justify-content: center;
+}
+
+@media (min-width: $tablet-width) {
+  .main-footer__container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    height: 136px;
+  }
+
+  .page-footer__logo {
+    display: block;
+    justify-content: center;
+  }
+
+}

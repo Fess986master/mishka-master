@@ -14,32 +14,50 @@
 </head>
 
 <body class="page__body container">
-  <header class="page-header">
-    <div class="page-header__wraper">
-      <a class="page-header__logo" href="index.html">
-        <img src="img\logo-mobile.svg" alt="Логотип Мишка">
-      </a>
-      <button class="page-header__button" type="button" aria-label="открыть меню"></button>
-    </div>
+  <header class="page-header page-header-wrapper">
+    <nav class="page-navigation-wrapper">
+      <div class="page-header__logo-wrapper">
+        <a class="page-header__logo" href="index.html">
+          <img src="img\logo-mobile.svg" alt="Логотип Мишка">
+        </a>
+        <button class="page-header__button" type="button" aria-label="открыть меню"></button>
+      </div>
 
-    <nav class="main-nav">
       <ul class="main-nav__list site-list main-nav__wrapper">
-        <li class="site-list__item">
-          <a class="site-list__reference site-list__item--first" href="catalog.html">Каталог товаров</a>
+        <li class="site-list__item site-list__item--catalog">
+          <a class="site-list__reference site-list__reference--catalog" href="catalog.html">Каталог товаров</a>
         </li>
         <li class="site-list__item">
-          <a class="site-list__reference" href="form.html">Вязание на заказ</a>
+          <a class="site-list__reference site-list__reference--order" href="form.html">Вязание на заказ</a>
         </li>
       </ul>
 
       <ul class="main-nav__list user-list main-nav__wrapper">
         <li class="site-list__item site-list__search">
-          <a class="site-list__reference" href="#">Поиск по сайту:</a>
+          <a class="site-list__reference site-list__reference--search" href="#">
+            <span class="span-hidden">
+              Поиск по сайту:
+            </span>
+          </a>
         </li>
-        <li class="site-list__item user-list__login">
-          <a class="site-list__reference" href="#">Корзина: пока пуста</a>
+        <li class="site-list__item user-list__cart">
+          <a class="site-list__reference site-list__reference--cart" href="#">Корзина: пока пуста</a>
         </li>
       </ul>
+
+      <ul class="main-nav__list bonus-list main-nav__wrapper">
+        <li class="site-list__item">
+          <a class="site-list__reference site-list__reference--incomings" href="catalog.html">Новые поступления</a>
+        </li>
+        <li class="site-list__item">
+          <a class="site-list__reference site-list__reference--sale" href="form.html">Распродажа</a>
+        </li>
+      </ul>
+
+      <p class="site-list__description">
+        Бесплатная доставка по россии
+      </p>
+
     </nav>
   </header>
 
@@ -52,16 +70,17 @@
             Милые штучки ручной <br>
             работы для дома
           </h2>
+          <div class="main-discription__button-wrapper">
+            <a href="#" class="main-discription__catalog catalog--interior">
+              <p class="catalog__text">Предметы <br> интерьера</p>
+              <!-- картинка -->
+            </a>
 
-          <a href="#" class="main-discription__catalog catalog--interior">
-            <p class="catalog__text">Предметы <br> интерьера</p>
-            <!-- картинка -->
-          </a>
-
-          <a href="#" class="main-discription__catalog catalog--toys">
-            <p class="catalog__text">Детские <br> игрушки</p>
-            <!-- картинка -->
-          </a>
+            <a href="#" class="main-discription__catalog catalog--toys">
+              <p class="catalog__text">Детские <br> игрушки</p>
+              <!-- картинка -->
+            </a>
+          </div>
       </div>
     </section>
 
@@ -131,10 +150,12 @@
             аксессуаров и игрушек в Мишке, и мои фотографии сразу стали более стильными, а также набирают больше
             лайков!
           </p>
-
-          <cite class="feedback__author">Анастасия Красильникова</cite>
-          <cite class="feedback__mail">@misssssiskras</cite>
         </blockquote>
+
+        <cite class="feedback__author">Анастасия Красильникова<br><span
+            class="feedback__mail">@misssssiskras</span></cite>
+        <!-- <cite class="feedback__mail">@misssssiskras</cite> -->
+
         <div class="feedback__button__wrapper">
           <button type="button" class="feedback__button-slider left">
             <img src="img/icon-left-arrow.svg" alt="предыдущий отзыв">
@@ -154,6 +175,8 @@
           <td class="contacts__table--title">e-mail:</td>
           <td class="contacts__table--propertyes">info@mimimishkashop.ru</td>
         </tr>
+      </table>
+      <table class="contacts__table">
         <tr>
           <td class="contacts__table--adress">адрес:</td>
           <td>г. Санкт Петербург <br> ул. Большая Конюшенная <br> д. 19/8, офис 101 </td>
@@ -163,10 +186,12 @@
       <!-- карта -->
       <button type="button" class="button contacts__button">НАПИШИТЕ НАМ</button>
     </section>
-
   </main>
 
   <footer class="main-footer main-footer__container">
+    <a class="page-footer__logo" href="index.html">
+      <img src="img\icons\logo-footer.svg" alt="Логотип Мишка">
+    </a>
     <ul class="socials__list socials_wrapper">
       <li class="socials__item">
         <a class="socials__item socials__item--instagram" href="#">

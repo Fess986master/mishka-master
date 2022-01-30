@@ -17,6 +17,24 @@
     // background-size: auto 6px;  -  так можно регулировать ширину волны
     background-position-x: 9px;
     background-image: url("../../img/bg-zigzag-line.svg");
+
+    @media (min-width: $tablet-width) {
+      bottom: -40px;
+      height: 17px;
+    }
+
+    @media (min-width: $desktop-width) {
+      bottom: -50px;
+      height: 23px;
+    }
+  }
+
+  @media (min-width: $tablet-width) {
+    margin-bottom: 60px;
+  }
+
+  @media (min-width: $tablet-width) {
+    margin-bottom: 80px;
   }
 }
 
@@ -33,6 +51,23 @@ h3 {
     font-size: 17px;
     line-height: 20px;
     color: $light_tiffany;
+    @media (min-width: $tablet-width) {
+      line-height: 17px;
+      width: 80px;
+      text-align: center;
+    }
+  }
+
+  @media (min-width: $tablet-width) {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 60px;
+  }
+
+  @media (min-width: $desktop-width) {
+    flex-direction: row-reverse;
+
   }
 }
 
@@ -59,4 +94,55 @@ font-family: "Open Sans",
   font-size: 17px;
   line-height: 24px;
   font-weight: 700;
+
+  @media (min-width: $tablet-width) {
+    font-size: 20px;
+  }
+
+  @media (min-width: $desktop-width) {
+    font-size: 20px;
+  }
+}
+
+@media (min-width: $tablet-width) {
+  .product-week__description {
+    width: 292px;
+    margin-bottom: 40px;
+  }
+
+  .description__specifications-table {
+    width: 292px;
+  }
+
+  .product-week__cost {
+    align-self: flex-start;
+    padding-left: 72px;
+  }
+
+  .product-week__button {
+    width: 292px;
+  }
+
+}
+
+@media (min-width: $desktop-width) {
+  .product-week__description {
+    margin-bottom: 80px;
+    margin-left: 175px;
+  }
+
+  .description__specifications-table {
+    margin-bottom: 80px;
+    margin-left: 175px;
+  }
+
+  .product-week__cost {
+    padding-left: 72px;
+    margin-left: 175px;
+  }
+
+  .product-week__button {
+    margin-left: 175px;
+  }
+
 }
