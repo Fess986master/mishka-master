@@ -104,3 +104,10 @@
   padding-left: 30px;
   padding-top: 24px;
 }
+
+@media (min-width: $tablet-width) {
+  .main-discription__button-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+  }
+}

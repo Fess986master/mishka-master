@@ -19,6 +19,7 @@ width: 76px;
 
 .contacts__table--propertyes {
   color:&border-bottom;
+  cursor: pointer;
   border-bottom: 1px #62D1BA solid;
 
   &:hover {
@@ -29,6 +30,10 @@ width: 76px;
     color: $mail_link_tiffany;
     border-bottom: none;
   }
+
+  @media (min-width: $tablet-width) {
+    border-bottom: none;
+  }
 }
 
 .contacts__table--adress {
@@ -37,4 +42,64 @@ width: 76px;
 
 .contacts__button {
   width: 100%;
+}
+
+@media (min-width: $tablet-width) {
+  .contacts__wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+  .contacts__title {
+    width: 100%;
+    line-height: 86px;
+    background-image: url("../img/icon-flag.svg");
+    background-repeat: no-repeat;
+    background-position: 100% 0%;
+  }
+
+  .contacts__table {
+    text-align: start;
+    vertical-align: top;
+  }
+
+  .contacts__table--title {
+    vertical-align: top;
+  }
+
+  .contacts__table--propertyes {
+    vertical-align: top;
+  }
+
+  .contacts__button {
+width: 230px;
+margin: 0 auto;
+  }
+
+}
+
+@media (min-width: $desktop-width) {
+.contacts__wrapper {
+  padding-left: 175px;
+  flex-flow: column;
+}
+
+  .contacts__title {
+    width: 400px;
+    padding-left: 100px;
+    margin-left: -100px;
+    background-position: 0% 0%;
+  }
+
+  .contacts__table {
+    text-align: start;
+    width: 400px;
+  }
+
+  .contacts__button {
+margin: 0;
+  }
+
+
 }
