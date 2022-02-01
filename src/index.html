@@ -11,19 +11,51 @@
   <link rel="preload" href="fonts/opensans.woff2" as="font" crossorigin="anonymous">
   <link rel="preload" href="fonts/opensansbold.woff2" as="font" crossorigin="anonymous">
   <link href="css/style.css" rel="stylesheet">
+  <!-- Pixel Glass -->
+  <!-- <style>
+  HTML {
+    background-repeat: no-repeat;
+    background-position:  20% 0;
+    /* По умолчанию показывается мобильный макет */
+    background-image: url( "img/Mobile.jpg" );
+  }
+  /* Планшет */
+  @media ( min-width: 768px ) {
+    HTML {
+      /* Планшетный макет */
+      background-image: url( "img/Tablet.png" );
+    }
+  }
+  /* Десктоп */
+  @media ( min-width: 1150px ) {
+    HTML {
+      /* Десктопный макет */
+      background-image: url( "img/Desktop.png" );
+    }
+  }
+</style>
+<link href="../node_modules/pixel-glass/styles.css" rel="stylesheet">
+<script src="../node_modules/pixel-glass/script.js"></script> -->
+  <!-- // Pixel Glass -->
+
+
+
 </head>
 
 <body class="page__body container">
+
   <header class="page-header page-header-wrapper">
     <nav class="page-navigation-wrapper">
       <div class="page-header__logo-wrapper">
         <a class="page-header__logo" href="index.html">
-          <img src="img\logo-mobile.svg" alt="Логотип Мишка">
+          <img src="img\logo-mobile.svg" alt="Логотип Мишка" width="86px" height="35px">
         </a>
-        <button class="page-header__button" type="button" aria-label="открыть меню"></button>
+        <button class="page-header__button page-header__button--open" type="button" aria-label="открыть меню"></button>
       </div>
 
-      <ul class="main-nav__list site-list main-nav__wrapper">
+      <!-- site-list--open  -->
+
+      <ul class="main-nav__list site-list site-list--open main-nav__wrapper">
         <li class="site-list__item site-list__item--catalog">
           <a class="site-list__reference site-list__reference--catalog" href="catalog.html">Каталог товаров</a>
         </li>
@@ -32,7 +64,9 @@
         </li>
       </ul>
 
-      <ul class="main-nav__list user-list main-nav__wrapper">
+      <!-- user-list--open -->
+
+      <ul class="main-nav__list  user-list user-list--open main-nav__wrapper">
         <li class="site-list__item site-list__search">
           <a class="site-list__reference site-list__reference--search" href="#">
             <span class="span-hidden">
@@ -109,7 +143,7 @@
           <td>15 см</td>
         </tr>
       </table>
-      <img src="img\content\triple-set-mobile@1x.jpg" alt="три корзинки">
+      <img src="img\content\triple-set-mobile@1x.jpg" alt="три корзинки" width="260px" height="315px">
       <div class="product-week__cost">Цена: 990 руб.</div>
       <a class="button product-week__button">Заказать</a>
 
@@ -158,7 +192,7 @@
 
         <div class="feedback__button__wrapper">
           <button type="button" class="feedback__button-slider left">
-            <img src="img/icon-left-arrow.svg" alt="предыдущий отзыв">
+            <img src="img/icon-left-arrow.svg" alt="предыдущий отзыв" width="50px" height="26px">
           </button>
           <button type="button" class="feedback__button-slider right">
             <img src="img/icon-right-arrow.svg" alt="предыдущий отзыв">
@@ -190,21 +224,21 @@
 
   <footer class="main-footer main-footer__container">
     <a class="page-footer__logo" href="index.html">
-      <img src="img\icons\logo-footer.svg" alt="Логотип Мишка">
+      <img src="img\icons\logo-footer.svg" alt="Логотип Мишка" width="102px" height="34px">
     </a>
     <ul class="socials__list socials_wrapper">
       <li class="socials__item">
         <a class="socials__item socials__item--instagram" href="#">
-          <img src="img\icons\icon-insta.svg" alt="instagram">
+          <img src="img\icons\icon-insta.svg" alt="instagram" width="22px" height="21px">
         </a>
       </li>
       <li class="socials__item">
         <a class="socials__item socials__item--facebook" href="#">
-          <img src="img\icons\icon-fb.svg" alt="facebook"></a>
+          <img src="img\icons\icon-fb.svg" alt="facebook" width="15px" height="28px"></a>
       </li>
       <li class="socials__item">
         <a class="socials__item socials__item--twitter" href="#">
-          <img src="img\icons\icon-twitter.svg" alt="twitter">
+          <img src="img\icons\icon-twitter.svg" alt="twitter" width="23px" height="20px">
         </a>
 
       </li>
@@ -218,6 +252,8 @@
       </div> -->
 
   </footer>
+
+  <script src="js/test.js"></script>
 
 </body>
 

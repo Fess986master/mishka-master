@@ -228,11 +228,11 @@
   order: 4;
 
   @media (min-width: $tablet-width) {
-    width: 584px;
+    width: calc(100% - 55px);
     margin-left: 42px;
   }
 
-  @media (min-width: $tablet-width) {
+  @media (min-width: $desktop-width) {
     width: 230px;
     margin-left: 42px;
     height: 52px;
@@ -262,6 +262,11 @@
 
   .product-card__image {
     width: 316px;
+  }
+
+  .product-card__image {
+    width: 260px;
+    height: 195px;
   }
 
   .description_cost_wrapper {
