@@ -18,12 +18,14 @@
     <nav class="page-navigation-wrapper">
       <div class="page-header__logo-wrapper">
         <a class="page-header__logo" href="index.html">
-          <img src="img\logo-mobile.svg" alt="Логотип Мишка">
+          <img src="img\logo-mobile.svg" alt="Логотип Мишка" width="86px" height="35px">
         </a>
-        <button class="page-header__button" type="button" aria-label="открыть меню"></button>
+        <button class="page-header__button page-header__button--open" type="button" aria-label="открыть меню"></button>
       </div>
 
-      <ul class="main-nav__list site-list main-nav__wrapper">
+      <!-- site-list--open  -->
+
+      <ul class="main-nav__list site-list site-list--open main-nav__wrapper">
         <li class="site-list__item site-list__item--catalog">
           <a class="site-list__reference site-list__reference--catalog" href="catalog.html">Каталог товаров</a>
         </li>
@@ -32,7 +34,9 @@
         </li>
       </ul>
 
-      <ul class="main-nav__list user-list main-nav__wrapper">
+      <!-- user-list--open -->
+
+      <ul class="main-nav__list  user-list user-list--open main-nav__wrapper">
         <li class="site-list__item site-list__search">
           <a class="site-list__reference site-list__reference--search" href="#">
             <span class="span-hidden">
@@ -84,7 +88,7 @@
           </ul>
         </fieldset>
 
-        <fieldset class="order-form__color color--wrapper">
+        <fieldset class="order-form__color color__wrapper">
           <legend class="order-form__legend order-form__legend--position">цвет</legend>
           <ul class="type__list color__list__wrapper">
             <li class="type__item">
@@ -165,21 +169,21 @@
 
   <footer class="main-footer main-footer__container">
     <a class="page-footer__logo" href="index.html">
-      <img src="img\icons\logo-footer.svg" alt="Логотип Мишка">
+      <img src="img\icons\logo-footer.svg" alt="Логотип Мишка" width="102px" height="34px">
     </a>
     <ul class="socials__list socials_wrapper">
       <li class="socials__item">
         <a class="socials__item socials__item--instagram" href="#">
-          <img src="img\icons\icon-insta.svg" alt="instagram">
+          <img src="img\icons\icon-insta.svg" alt="instagram" width="22px" height="21px">
         </a>
       </li>
       <li class="socials__item">
         <a class="socials__item socials__item--facebook" href="#">
-          <img src="img\icons\icon-fb.svg" alt="facebook"></a>
+          <img src="img\icons\icon-fb.svg" alt="facebook" width="15px" height="28px"></a>
       </li>
       <li class="socials__item">
         <a class="socials__item socials__item--twitter" href="#">
-          <img src="img\icons\icon-twitter.svg" alt="twitter">
+          <img src="img\icons\icon-twitter.svg" alt="twitter" width="23px" height="20px">
         </a>
 
       </li>

@@ -11,6 +11,8 @@
   line-height: 30px;
   color: $brown_border;
   font-weight: normal;
+  flex-grow: 1;
+  width: 50%;
 }
 
 .contacts__table--title {
@@ -95,10 +97,14 @@ margin: 0 auto;
   .contacts__table {
     text-align: start;
     width: 400px;
+    margin-bottom: 30px;
   }
 
   .contacts__button {
 margin: 0;
+@media (min-width: $desktop-width) {
+  margin-bottom: 30px;
+}
   }
 
 
