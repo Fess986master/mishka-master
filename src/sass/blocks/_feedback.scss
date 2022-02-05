@@ -65,6 +65,15 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
+    background-color: $white;
+    background-repeat: no-repeat;
+    background-image: url('../img/review@1x.jpg');
+    background-size: cover;
+    background-position: 50% top;
+
+    @media (min-resolution: 2dppx) {
+      background-image: url('../img/review@2x.jpg');
+    }
   }
 
   .feedback__title {
