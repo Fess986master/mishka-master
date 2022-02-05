@@ -95,6 +95,8 @@
     </nav>
   </header>
 
+
+
   <main class="page-main">
     <h1 class="visually-hidden">вызянные игрушки для дома</h1>
     <section class="main-discription">
@@ -143,7 +145,12 @@
           <td>15 см</td>
         </tr>
       </table>
-      <img src="img\content\triple-set-mobile@1x.jpg" alt="три корзинки" width="260px" height="315px">
+ss
+      <picture>
+        <source media="(min-width: 1150px)" srcset="img\content\triple-set-desktop@1x.jpg 1x, img\content\triple-set-desktop@2x.jpg 2x">
+        <source media='(min-width: 768px)' srcset='img/content\triple-set-tablet@1x.jpg 1x, img/content\triple-set-tablet@2x.jpg 2x'>
+        <img src="img\content\triple-set-mobile@1x.jpg" srcset="img\content\triple-set-mobile@2x.jpg 2x" alt="три корзинки" width="260px" height="315px">
+      </picture>
       <div class="product-week__cost">Цена: 990 руб.</div>
       <a class="button product-week__button">Заказать</a>
 
@@ -213,9 +220,15 @@
       <table class="contacts__table">
         <tr>
           <td class="contacts__table--adress">адрес:</td>
-          <td>г. Санкт Петербург <br> ул. Большая Конюшенная <br> д. 19/8, офис 101 </td>
+          <td>г. Санкт Петербург <br> <snap>ул. Большая Конюшенная</snap> <br> д. 19/8, офис 101 </td>
         </tr>
       </table>
+
+      <picture>
+        <source media='(min-width: 1150px)' srcset='img/content/map-desktop@1x.jpg 1x, img/content/map-desktop@2x.jpg 2x'>
+        <source media='(min-width: 768px)' srcset='img/content/map-tablet@1x.jpg 1x, img/content/map-tablet@2x.jpg 2x'>
+        <img src="img/content/map-mobile@1x.jpg" srcset='img/content/map-mobile@2x.jpg 2x' alt="как нас найти" width="320px" height="454px">
+      </picture>
 
       <!-- карта -->
       <button type="button" class="button contacts__button">НАПИШИТЕ НАМ</button>
