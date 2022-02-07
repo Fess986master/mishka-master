@@ -13,9 +13,18 @@
 }
 
 .main-discription__intro {
-  padding-top: 94px;
+  padding-top: 140px;
   padding-bottom: 116px;
   text-align: center;
+
+  @media (min-width: $tablet-width) {
+    padding-top: 76px;
+    padding-bottom: 380px;
+  }
+
+  @media (min-width: $desktop-width) {
+    padding-bottom: 372px;
+  }
 }
 
 .main-discription__catalog {
@@ -26,6 +35,10 @@
   box-sizing: content-box;
   width: 100%;
   height: 103px;
+
+  @media (min-width: $tablet-width) {
+    width: 50%;
+  }
 }
 
 .catalog--interior {
@@ -112,8 +125,24 @@
 
 @media (min-width: $tablet-width) {
   .main-discription__button-wrapper {
+    position: relative;
     display: flex;
     flex-wrap: wrap;
+    &::after {
+
+@media (min-width: $tablet-width) {
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 24px;
+  //background-color: red;
+  top: 92px;
+  background-repeat: no-repeat;
+  background-image: url('../img/bg-zigzag-fill.svg');
+  background-size: 768px 24px;
+  //background-position: ;
+}
+    }
   }
 
   .main-discription {
@@ -122,11 +151,15 @@
     @media (min-resolution: 2dppx) {
       background-image: url("../img/hero-tablet@2x.jpg");
     }
+background-position: 47% 170%;
+    height: 700px;
+    margin-bottom: 19px;
   }
 }
 
 @media (min-width: $desktop-width) {
   .main-discription {
+    margin-bottom: 100px;
     background-image: url("../img/hero-desktop@1x.jpg");
 
     @media (min-resolution: 2dppx) {
