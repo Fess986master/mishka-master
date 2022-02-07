@@ -68,8 +68,10 @@
     background-color: $white;
     background-repeat: no-repeat;
     background-image: url('../img/review@1x.jpg');
-    background-size: cover;
-    background-position: 50% top;
+    //background-size: cover;
+    //background-position: 50% top;
+    padding-top: 80px;
+    margin-bottom: 182px;
 
     @media (min-resolution: 2dppx) {
       background-image: url('../img/review@2x.jpg');
@@ -90,12 +92,22 @@
 
   .feedback__list {
     margin-bottom: 30px;
+    @media (min-width: $tablet-width) {
+      margin-bottom: 46px;
+    }
 
+    @media (min-width: $desktop-width) {
+      margin-bottom: 20px;
+    }
   }
 }
 
 @media (min-width: $desktop-width) {
   .feedback__wraper {
-    margin-left: 175px;
+    padding-left: 175px;
+    height: 457px;
+    margin-bottom: 222px;
+    //margin-left: 175px;
+    //background-position: -100px 0;
   }
 }

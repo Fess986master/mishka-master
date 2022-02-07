@@ -14,6 +14,45 @@
   margin-bottom: 14px;
 }
 
+.insta--svg {
+  fill: $black;
+
+  &:hover {
+    fill: $mail_link_tiffany;
+  }
+
+  &:active {
+    fill: $mail_link_tiffany;
+    opacity: 0.3;
+  }
+}
+
+.facebook--svg {
+  fill: $black;
+
+  &:hover {
+    fill: $mail_link_tiffany;
+  }
+
+  &:active {
+    fill: $mail_link_tiffany;
+    opacity: 0.3;
+  }
+}
+
+.twitter--svg {
+  fill: $black;
+
+  &:hover {
+    fill: $mail_link_tiffany;
+  }
+
+  &:active {
+    fill: $mail_link_tiffany;
+    opacity: 0.3;
+  }
+}
+
 .socials__item--instagram img {
   width: 22px;
   height: 21px;

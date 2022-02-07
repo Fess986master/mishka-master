@@ -30,17 +30,38 @@
   }
 
   @media (min-width: $tablet-width) {
-    margin-bottom: 60px;
+    margin-bottom: 120px;
   }
 
-  @media (min-width: $tablet-width) {
-    margin-bottom: 80px;
+  @media (min-width: $desktop-width) {
+    margin-bottom: 160px;
+  }
+}
+
+.features__wrapper {
+  @media (min-width: $desktop-width) {
+    margin-bottom: 63px;
   }
 }
 
 .product-week img{
-width: 260px;
-height: 315px;
+min-width: 260px;
+width: 100%;
+height: auto;
+
+@media (min-width: $tablet-width) {
+  position: absolute;
+  width: 334px;
+  right:0px;
+  top: 110px;
+}
+
+@media (min-width: $desktop-width) {
+  width: 525px;
+  top: -57px;
+  z-index: -10;
+}
+//height: 315px;
 }
 
 .product-week__title {
@@ -70,7 +91,7 @@ h3 {
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 60px;
+    margin-bottom: 36px;
   }
 
   @media (min-width: $desktop-width) {
@@ -116,11 +137,12 @@ font-family: "Open Sans",
 @media (min-width: $tablet-width) {
   .product-week__description {
     width: calc(50% - 7px);
-    margin-bottom: 40px;
+    margin-bottom: 13px;
   }
 
   .description__specifications-table {
     width: calc(50% - 7px);
+    margin-bottom: 57px;
   }
 
   .product-week__cost {
@@ -128,6 +150,7 @@ font-family: "Open Sans",
     text-align: center;
     // padding-left: 72px;
     width: calc(50% - 7px);
+    margin-bottom: 12px;
   }
 
   .product-week__button {
@@ -138,22 +161,28 @@ font-family: "Open Sans",
 
 @media (min-width: $desktop-width) {
   .product-week__description {
-    margin-bottom: 80px;
+    margin-bottom: 24px;
     margin-left: 175px;
+    width: 350px;
   }
 
   .description__specifications-table {
-    margin-bottom: 80px;
+    margin-bottom: 110px;
     margin-left: 175px;
+    width: 350px;
   }
 
   .product-week__cost {
-    padding-left: 72px;
+    //padding-left: 72px;
     margin-left: 175px;
+    padding-right: 46px;
+    width: 350px;
   }
 
   .product-week__button {
     margin-left: 175px;
+    width: 292px;
+    top: -50px;
   }
 
 }

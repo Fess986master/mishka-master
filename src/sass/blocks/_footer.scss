@@ -7,6 +7,20 @@
   justify-content: center;
 }
 
+.footer__logo--svg {
+  fill: $black;
+}
+
+
+.footer__logo--svg:hover {
+  fill: $mail_link_tiffany;
+}
+
+.footer__logo--svg:active {
+  fill: $mail_link_tiffany;
+  opacity: 0.3;
+}
+
 @media (min-width: $tablet-width) {
   .main-footer__container {
     display: flex;
