@@ -8,9 +8,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
   <title>Mishka</title>
   <meta name="viewport" content="width=device-width,initial-scale=1">
+  <!-- добавление шрифтов в прелоадер для ускорения загрузки. не всегда есть смысл, так как они и так будут быстро подключаться. Болд-версию прелоадить еще меньше смысла. -->
   <link rel="preload" href="fonts/opensans.woff2" as="font" crossorigin="anonymous">
   <link rel="preload" href="fonts/opensansbold.woff2" as="font" crossorigin="anonymous">
-  <link href="css/style.css" rel="stylesheet">
+  <!-- добавление стилей в прелоадер для ускорения загрузки. С другой стороны это не сильно отличается от обычного стайлшита, т.к. приоритет и там и там высокий. прелоадить есть смысл стили, которые могут использоваться на других страницах -->
+  <!-- <link rel="preload" href="css/style.css" as="style"> -->
+  <link href="css/style.min.css" rel="stylesheet">
+
 </head>
 
 <body class="page__body container">
@@ -89,7 +93,7 @@
 
   <main class="form-main">
     <section class="order-section order-section__wrapper">
-      <h1 class="visually-hidden">Форма заказа вязанных инрушек для дома</h1>
+      <h1 class="visually-hidden">Форма заказа вязанных игрушек для дома</h1>
       <h2 class="order-section__title">Вязание на заказ</h2>
       <p class="order-section__text">Мы будем рады воплотить в жизнь ваши пожелания! Заполните простую форму заказа и мы
         свяжемся с вами, чтобы
@@ -172,8 +176,6 @@
 
         <fieldset class="order-form__additional additional__wrapper ">
           <legend class="order-form__legend  order-form__legend--position">доп</legend>
-          <!-- <input class="additional__input" type="e-mail" name="additional"
-            placeholder="Опишите все ваши пожелания к заказу"> -->
 
           <textarea class="additional__input" name="additional-info" id="additional" cols="6" rows="10"
             placeholder="Опишите все ваши пожелания к заказу"></textarea>
@@ -191,7 +193,6 @@
 
   <footer class="main-footer main-footer__container">
     <a class="page-footer__logo" href="index.html" aria-label="Логотип мишки">
-      <!-- <img src="img\icons\logo-footer.svg" alt="Логотип Мишка" width="102px" height="34px"> -->
       <object data="img\icons\logo-footer.svg" type="image/svg+xml" width="102px" height="34px"></object>
       <!-- <img src="img\icons\logo-footer.png" alt="Логотип Мишка" width="102px" height="34px"> -->
       <!-- для того чтобы можно было обратиться к классу внутри свг нужно прописать в начале свг это <?xml-stylesheet type="text/css" href="../../css/style.css"?> -->
@@ -199,7 +200,6 @@
     <ul class="socials__list socials_wrapper">
       <li class="socials__item">
         <a class="socials__item socials__item--instagram" href="#" aria-label="ссылка на инстаграмм">
-          <!-- <img src="img\icons\icon-insta.svg" alt="instagram" width="22px" height="21px"> -->
           <!-- <svg height="22px" width="21px">
             <use xlink:href="#insta"></use>
           </svg> -->
@@ -212,13 +212,12 @@
         <a class="socials__item socials__item--facebook" href="#" aria-label="ссылка на фейсбук">
           <!-- <img src="img\icons\icon-fb.svg" alt="facebook" width="15px" height="28px"></a> -->
           <svg role="img" class="facebook--svg" height="23px" width="20px" focusable="false">
-            <use xlink:href="#facebook"></use>
+            <use xlink:href="img/sprites.svg#icon-fb"></use>
           </svg>
         </a>
       </li>
       <li class="socials__item">
         <a class="socials__item socials__item--twitter" href="#">
-          <!-- <img src="img\icons\icon-twitter.svg" alt="twitter" width="23px" height="20px"> -->
           <svg role="img" aria-label="ссылка на твитер" class="twitter--svg" height="23px" width="20px">
             <use xlink:href="#twitter"></use>
           </svg>
@@ -229,9 +228,8 @@
     <div class="main-footer__developers developers_wrapper">
       <div class="developers_title">Разработано</div>
     </div>
-    <!-- <div class="main-footer__logo">
-        <img class="logo-mobile" ></img>
-      </div> -->
+    <img class="logo-mobile"></img>
+    </div>
 
   </footer>
 
