@@ -148,6 +148,7 @@
   .main-discription {
     background-image: url("../img/hero-tablet@1x.jpg");
 
+
     @media (min-resolution: 2dppx) {
       background-image: url("../img/hero-tablet@2x.jpg");
     }

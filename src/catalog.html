@@ -8,9 +8,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
   <title>Mishka</title>
   <meta name="viewport" content="width=device-width,initial-scale=1">
+  <!-- добавление шрифтов в прелоадер для ускорения загрузки. не всегда есть смысл, так как они и так будут быстро подключаться. Болд-версию прелоадить еще меньше смысла. -->
   <link rel="preload" href="fonts/opensans.woff2" as="font" crossorigin="anonymous">
   <link rel="preload" href="fonts/opensansbold.woff2" as="font" crossorigin="anonymous">
-  <link href="css/style.css" rel="stylesheet">
+  <!-- добавление стилей в прелоадер для ускорения загрузки. С другой стороны это не сильно отличается от обычного стайлшита, т.к. приоритет и там и там высокий. прелоадить есть смысл стили, которые могут использоваться на других страницах -->
+  <!-- <link rel="preload" href="css/style.css" as="style"> -->
+  <link href="css/style.min.css" rel="stylesheet">
+
 </head>
 
 <body class="page__body container">
@@ -96,12 +100,18 @@
         <li class="product-card__item product-card__item_wrapper">
           <a class="product-card__image" href="#">
             <picture>
+              <source type="image/webp" media='(min-width: 1150px)'
+                srcset='img\content\photo-hare-desktop@1x.webp 1x, img\content\photo-hare-desktop@2x.webp 2x'>
+              <source media='(min-width: 768px)' type="image/webp"
+                srcset='img\content\photo-hare-tablet@1x.webp 1x, img\content\photo-hare-tablet@2x.webp 2x'>
+              <source type="image/webp"
+                srcset='img\content\photo-hare-mobile@1x.webp 1x, img\content\photo-hare-mobile@2x.webp 2x'>
               <source media='(min-width: 1150px)'
                 srcset='img\content\photo-hare-desktop@1x.jpg 1x, img\content\photo-hare-desktop@2x.jpg 2x'>
               <source media='(min-width: 768px)'
                 srcset='img\content\photo-hare-tablet@1x.jpg 1x, img\content\photo-hare-tablet@2x.jpg 2x'>
-              <img class="catalog-picture" src="img\content\photo-hare-mobile@1x.jpg" srcset="img\content\photo-hare-mobile@2x.jpg 2x"
-                alt="фото зайчика" width="260" height="195">
+              <img class="catalog-picture" src="img\content\photo-hare-mobile@1x.jpg"
+                srcset="img\content\photo-hare-mobile@2x.jpg 2x" alt="фото зайчика" width="260" height="195">
             </picture>
           </a>
           <div class="description_cost_wrapper">
@@ -127,12 +137,18 @@
         <li class="product-card__item product-card__item_wrapper">
           <a class="product-card__image" href="#">
             <picture>
+              <source type="image/webp" media='(min-width: 1150px)'
+                srcset='img\content\photo-bowl-desktop@1x.webp 1x, img\content\photo-bowl-desktop@2x.webp 2x'>
+              <source media='(min-width: 768px)' type="image/webp"
+                srcset='img\content\photo-bowl-tablet@1x.webp 1x, img\content\photo-bowl-tablet@2x.webp 2x'>
+              <source type="image/webp"
+                srcset='img\content\photo-bowl-mobile@1x.webp 1x, img\content\photo-bowl-mobile@2x.webp 2x'>
               <source media='(min-width: 1150px)'
                 srcset='img\content\photo-bowl-desktop@1x.jpg 1x, img\content\photo-bowl-desktop@2x.jpg 2x'>
               <source media='(min-width: 768px)'
                 srcset='img\content\photo-bowl-tablet@1x.jpg 1x, img\content\photo-bowl-tablet@2x.jpg 2x'>
-              <img class="catalog-picture" src="img\content\photo-bowl-mobile@1x.jpg" srcset="img\content\photo-bowl-mobile@2x.jpg 2x"
-                alt="фото корзинки для белья" width="260" height="195">
+              <img class="catalog-picture" src="img\content\photo-bowl-mobile@1x.jpg"
+                srcset="img\content\photo-bowl-mobile@2x.jpg 2x" alt="фото корзинки для белья" width="260" height="195">
             </picture>
           </a>
           <div class="description_cost_wrapper">
@@ -158,12 +174,18 @@
         <li class="product-card__item product-card__item_wrapper">
           <a class="product-card__image" href="#">
             <picture>
+              <source type="image/webp" media='(min-width: 1150px)'
+                srcset='img\content\photo-toys-desktop@1x.webp 1x, img\content\photo-toys-desktop@2x.webp 2x'>
+              <source media='(min-width: 768px)' type="image/webp"
+                srcset='img\content\photo-toys-tablet@1x.webp 1x, img\content\photo-toys-tablet@2x.webp 2x'>
+              <source type="image/webp"
+                srcset='img\content\photo-toys-mobile@1x.webp 1x, img\content\photo-toys-mobile@2x.webp 2x'>
               <source media='(min-width: 1150px)'
                 srcset='img\content\photo-toys-desktop@1x.jpg 1x, img\content\photo-toys-desktop@2x.jpg 2x'>
               <source media='(min-width: 768px)'
                 srcset='img\content\photo-toys-tablet@1x.jpg 1x, img\content\photo-toys-tablet@2x.jpg 2x'>
-              <img class="catalog-picture" src="img\content\photo-toys-mobile@1x.jpg" srcset="img\content\photo-toys-mobile@2x.jpg 2x"
-                alt="фото игрушек в корзинке" width="260" height="195">
+              <img class="catalog-picture" src="img\content\photo-toys-mobile@1x.jpg"
+                srcset="img\content\photo-toys-mobile@2x.jpg 2x" alt="фото игрушек в корзинке" width="260" height="195">
             </picture>
           </a>
           <div class="description_cost_wrapper">
@@ -196,6 +218,12 @@
         <div class="production-video__picture">
           <h4 class="production-video__button-in-image visually-hidden">позиционирование кнопки в картинке </h4>
           <picture>
+            <source type="image/webp" media='(min-width: 1150px)'
+              srcset='img\video-desktop@1x.webp 1x, img\video-desktop@2x.webp 2x'>
+            <source media='(min-width: 768px)' type="image/webp"
+              srcset='img\video-tablet@1x.webp 1x, img\video-tablet@2x.webp 2x'>
+            <source type="image/webp" srcset='img\video-mobile@1x.webp 1x, img\video-mobile@2x.webp 2x'>
+
             <source media='(min-width: 1150px)' srcset='img\video-desktop@1x.jpg 1x, img\video-desktop@2x.jpg 2x'>
             <source media='(min-width: 768px)' srcset='img\video-tablet@1x.jpg 1x, img\video-tablet@2x.jpg 2x'>
             <img class="production-video__image" src="img\video-mobile@1x.jpg" srcset="img\video-mobile@2x.jpg 2x"
@@ -216,7 +244,6 @@
 
   <footer class="main-footer main-footer__container">
     <a class="page-footer__logo" href="index.html" aria-label="Логотип мишки">
-      <!-- <img src="img\icons\logo-footer.svg" alt="Логотип Мишка" width="102px" height="34px"> -->
       <object data="img\icons\logo-footer.svg" type="image/svg+xml" width="102px" height="34px"></object>
       <!-- <img src="img\icons\logo-footer.png" alt="Логотип Мишка" width="102px" height="34px"> -->
       <!-- для того чтобы можно было обратиться к классу внутри свг нужно прописать в начале свг это <?xml-stylesheet type="text/css" href="../../css/style.css"?> -->
@@ -224,7 +251,6 @@
     <ul class="socials__list socials_wrapper">
       <li class="socials__item">
         <a class="socials__item socials__item--instagram" href="#" aria-label="ссылка на инстаграмм">
-          <!-- <img src="img\icons\icon-insta.svg" alt="instagram" width="22px" height="21px"> -->
           <!-- <svg height="22px" width="21px">
             <use xlink:href="#insta"></use>
           </svg> -->
@@ -237,13 +263,12 @@
         <a class="socials__item socials__item--facebook" href="#" aria-label="ссылка на фейсбук">
           <!-- <img src="img\icons\icon-fb.svg" alt="facebook" width="15px" height="28px"></a> -->
           <svg role="img" class="facebook--svg" height="23px" width="20px" focusable="false">
-            <use xlink:href="#facebook"></use>
+            <use xlink:href="img/sprites.svg#icon-fb"></use>
           </svg>
         </a>
       </li>
       <li class="socials__item">
         <a class="socials__item socials__item--twitter" href="#">
-          <!-- <img src="img\icons\icon-twitter.svg" alt="twitter" width="23px" height="20px"> -->
           <svg role="img" aria-label="ссылка на твитер" class="twitter--svg" height="23px" width="20px">
             <use xlink:href="#twitter"></use>
           </svg>
@@ -254,9 +279,8 @@
     <div class="main-footer__developers developers_wrapper">
       <div class="developers_title">Разработано</div>
     </div>
-    <!-- <div class="main-footer__logo">
-        <img class="logo-mobile" ></img>
-      </div> -->
+    <img class="logo-mobile"></img>
+    </div>
 
   </footer>
 

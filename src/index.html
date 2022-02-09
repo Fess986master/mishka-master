@@ -8,37 +8,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
   <title>Mishka</title>
   <meta name="viewport" content="width=device-width,initial-scale=1">
+  <!-- добавление шрифтов в прелоадер для ускорения загрузки. не всегда есть смысл, так как они и так будут быстро подключаться. Болд-версию прелоадить еще меньше смысла. -->
   <link rel="preload" href="fonts/opensans.woff2" as="font" crossorigin="anonymous">
   <link rel="preload" href="fonts/opensansbold.woff2" as="font" crossorigin="anonymous">
-  <link href="css/style.css" rel="stylesheet">
-  <!-- Pixel Glass -->
-  <!-- <style>
-  HTML {
-    background-repeat: no-repeat;
-    background-position:  20% 0;
-    /* По умолчанию показывается мобильный макет */
-    background-image: url( "img/Mobile.jpg" );
-  }
-  /* Планшет */
-  @media ( min-width: 768px ) {
-    HTML {
-      /* Планшетный макет */
-      background-image: url( "img/Tablet.png" );
-    }
-  }
-  /* Десктоп */
-  @media ( min-width: 1150px ) {
-    HTML {
-      /* Десктопный макет */
-      background-image: url( "img/Desktop.png" );
-    }
-  }
-</style>
-<link href="../node_modules/pixel-glass/styles.css" rel="stylesheet">
-<script src="../node_modules/pixel-glass/script.js"></script> -->
-  <!-- // Pixel Glass -->
-
-
+  <!-- добавление стилей в прелоадер для ускорения загрузки. С другой стороны это не сильно отличается от обычного стайлшита, т.к. приоритет и там и там высокий. прелоадить есть смысл стили, которые могут использоваться на других страницах -->
+  <!-- <link rel="preload" href="css/style.css" as="style"> -->
+  <link href="css/style.min.css" rel="stylesheet">
 
 </head>
 
@@ -130,12 +105,10 @@
           <div class="main-discription__button-wrapper">
             <a href="#" class="main-discription__catalog catalog--interior">
               <p class="catalog__text">Предметы <br> интерьера</p>
-              <!-- картинка -->
             </a>
 
             <a href="#" class="main-discription__catalog catalog--toys">
               <p class="catalog__text">Детские <br> игрушки</p>
-              <!-- картинка -->
             </a>
           </div>
       </div>
@@ -232,7 +205,7 @@
             <img src="img/icon-left-arrow.svg" alt="предыдущий отзыв" width="50px" height="26px">
           </button>
           <button type="button" class="feedback__button-slider right">
-            <img src="img/icon-right-arrow.svg" alt="предыдущий отзыв">
+            <img src="img/icon-right-arrow.svg" alt="следущий отзыв">
           </button>
         </div>
         <button type="button" class="button feedback__button">Написать</button>
@@ -257,6 +230,11 @@
       </table>
 
       <picture>
+        <source type="image/webp" media='(min-width: 1150px)'
+          srcset='img/content/map-desktop@1x.webp 1x, img/content/map-desktop@2x.webp 2x'>
+        <source media='(min-width: 768px)' type="image/webp"
+          srcset='img/content/map-tablet@1x.webp 1x, img/content/map-tablet@2x.webp 2x'>
+        <source type="image/webp" srcset='img\content\map-mobile@1x.webp 1x, img\content\map-mobile@2x.webp 2x'>
         <source media='(min-width: 1150px)'
           srcset='img/content/map-desktop@1x.jpg 1x, img/content/map-desktop@2x.jpg 2x'>
         <source media='(min-width: 768px)' srcset='img/content/map-tablet@1x.jpg 1x, img/content/map-tablet@2x.jpg 2x'>
@@ -271,7 +249,6 @@
 
   <footer class="main-footer main-footer__container">
     <a class="page-footer__logo" href="index.html" aria-label="Логотип мишки">
-      <!-- <img src="img\icons\logo-footer.svg" alt="Логотип Мишка" width="102px" height="34px"> -->
       <object data="img\icons\logo-footer.svg" type="image/svg+xml" width="102px" height="34px"></object>
       <!-- <img src="img\icons\logo-footer.png" alt="Логотип Мишка" width="102px" height="34px"> -->
       <!-- для того чтобы можно было обратиться к классу внутри свг нужно прописать в начале свг это <?xml-stylesheet type="text/css" href="../../css/style.css"?> -->
@@ -279,7 +256,6 @@
     <ul class="socials__list socials_wrapper">
       <li class="socials__item">
         <a class="socials__item socials__item--instagram" href="#" aria-label="ссылка на инстаграмм">
-          <!-- <img src="img\icons\icon-insta.svg" alt="instagram" width="22px" height="21px"> -->
           <!-- <svg height="22px" width="21px">
             <use xlink:href="#insta"></use>
           </svg> -->
@@ -292,13 +268,12 @@
         <a class="socials__item socials__item--facebook" href="#" aria-label="ссылка на фейсбук">
           <!-- <img src="img\icons\icon-fb.svg" alt="facebook" width="15px" height="28px"></a> -->
           <svg role="img" class="facebook--svg" height="23px" width="20px" focusable="false">
-            <use xlink:href="#facebook"></use>
+            <use xlink:href="img/sprites.svg#icon-fb"></use>
           </svg>
         </a>
       </li>
       <li class="socials__item">
         <a class="socials__item socials__item--twitter" href="#">
-          <!-- <img src="img\icons\icon-twitter.svg" alt="twitter" width="23px" height="20px"> -->
           <svg role="img" aria-label="ссылка на твитер" class="twitter--svg" height="23px" width="20px">
             <use xlink:href="#twitter"></use>
           </svg>
@@ -309,13 +284,12 @@
     <div class="main-footer__developers developers_wrapper">
       <div class="developers_title">Разработано</div>
     </div>
-    <!-- <div class="main-footer__logo">
-        <img class="logo-mobile" ></img>
-      </div> -->
+    <img class="logo-mobile"></img>
+    </div>
 
   </footer>
 
-  <script src="js/test.js"></script>
+  <script src="js/index.min.js"></script>
 
 </body>
 
