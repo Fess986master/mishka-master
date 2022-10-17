@@ -128,31 +128,31 @@
     position: relative;
     display: flex;
     flex-wrap: wrap;
-    &::after {
 
-@media (min-width: $tablet-width) {
-  position: absolute;
-  content: "";
-  width: 100%;
-  height: 24px;
-  //background-color: red;
-  top: 92px;
-  background-repeat: no-repeat;
-  background-image: url('../img/bg-zigzag-fill.svg');
-  background-size: 768px 24px;
-  //background-position: ;
-}
+    &::after {
+      @media (min-width: $tablet-width) {
+        position: absolute;
+        content: "";
+        width: 100%;
+        height: 24px;
+        //background-color: red;
+        top: 92px;
+        background-repeat: no-repeat;
+        background-image: url("../img/bg-zigzag-fill.svg");
+        background-size: 768px 24px;
+        //background-position: ;
+      }
     }
   }
 
   .main-discription {
     background-image: url("../img/hero-tablet@1x.jpg");
 
-
     @media (min-resolution: 2dppx) {
       background-image: url("../img/hero-tablet@2x.jpg");
     }
-background-position: 47% 170%;
+
+    background-position: 47% 170%;
     height: 700px;
     margin-bottom: 19px;
   }
